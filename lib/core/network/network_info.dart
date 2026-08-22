@@ -1,25 +1,19 @@
-import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
-/// Network Information Interface
-/// Provides network connectivity status
+/// Abstraction over connectivity checks so repositories can decide
+/// whether to attempt a remote call or fail fast with [NetworkFailure].
 abstract class NetworkInfo {
-  /// Checks if device is connected to internet
   Future<bool> get isConnected;
-
-  /// Stream of connectivity changes
-  Stream<InternetConnectionStatus> get onStatusChange;
 }
 
-/// Implementation of NetworkInfo using internet_connection_checker
 class NetworkInfoImpl implements NetworkInfo {
-  final InternetConnectionChecker connectionChecker;
+  final Connectivity connectivity;
 
-  NetworkInfoImpl(this.connectionChecker);
-
-  @override
-  Future<bool> get isConnected => connectionChecker.hasConnection;
+  NetworkInfoImpl(this.connectivity);
 
   @override
-  Stream<InternetConnectionStatus> get onStatusChange =>
-      connectionChecker.onStatusChange;
+  Future<bool> get isConnected async {
+    final result = await connectivity.checkConnectivity();
+    return !result.contains(ConnectivityResult.none);
+  }
 }

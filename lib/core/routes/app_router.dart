@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../features/main/pages/main_page.dart';
 import 'routes.dart';
 
 /// Application Router
