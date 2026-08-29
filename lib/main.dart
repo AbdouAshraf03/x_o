@@ -1,6 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:x_o/core/theme/app_theme.dart';
 
-void main() {
+import 'core/routes/app_router.dart';
+import 'core/routes/routes.dart';
+import 'injection_container.dart';
+
+void main() async {
+  // await Firebase.initializeApp();
+
+  await init();
   runApp(const MyGame());
 }
 
@@ -9,6 +18,11 @@ class MyGame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    return MaterialApp(
+      initialRoute: Routes.login,
+      onGenerateRoute: AppRouter.generateRoute,
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+    );
   }
 }

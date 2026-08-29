@@ -1,68 +1,55 @@
 import 'package:flutter/material.dart';
 
-/// Application Color Constants
 class AppColors {
   AppColors._();
 
-  // Primary Colors
-  static const Color primary = Color(0xFF667EEA);
-  static const Color primaryDark = Color(0xFF5A67D8);
-  static const Color primaryLight = Color(0xFF7C8FFF);
+  static const Color deepSpaceDark = Color(0xFF0D0E14);
 
-  // Secondary Colors
-  static const Color secondary = Color(0xFF764BA2);
-  static const Color secondaryDark = Color(0xFF6B4190);
-  static const Color secondaryLight = Color(0xFF8B5BB5);
+  static const Color deepSpaceLight = Color(0xFF1A1C2C);
 
-  // Accent Colors
-  static const Color accent = Color(0xFFF093FB);
-  static const Color accentDark = Color(0xFFE080E8);
-  static const Color accentLight = Color(0xFFFFB3FF);
+  static const Color glassPanelSurface = Color(0x99191B2C);
 
-  // Background Colors
-  static const Color background = Color(0xFFF8F9FA);
-  static const Color backgroundDark = Color(0xFF1A1A2E);
-  static const Color surface = Color(0xFFFFFFFF);
-  static const Color surfaceDark = Color(0xFF16213E);
+  static const Color inputBackground = Color(0x4D000000);
 
-  // Text Colors
-  static const Color textPrimary = Color(0xFF2D3436);
-  static const Color textSecondary = Color(0xFF636E72);
-  static const Color textLight = Color(0xFFB2BEC3);
-  static const Color textOnPrimary = Color(0xFFFFFFFF);
+  static const Color coreCyan = Color(0xFF22D3EE);
 
-  // Status Colors
-  static const Color success = Color(0xFF00B894);
-  static const Color warning = Color(0xFFFDAA5D);
-  static const Color error = Color(0xFFE74C3C);
-  static const Color info = Color(0xFF74B9FF);
+  static const Color actionBlue = Color(0xFF2563EB);
 
-  // Border & Divider Colors
-  static const Color border = Color(0xFFDFE6E9);
-  static const Color divider = Color(0xFFECF0F1);
+  static const Color deepBlueAccent = Color(0xFF06B6D4);
 
-  // Gradients
-  static const LinearGradient primaryGradient = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [primary, secondary],
+  static const Color lightestCyan = Color(0xFFCFFAFE);
+
+  static const Color gradientStart = Color(0xFF00D2FF);
+
+  static const Color gradientEnd = Color(0xFF0099FF);
+
+  static const Color buttonShadow = Color(0x800099FF);
+
+  static const LinearGradient actionGradient = LinearGradient(
+    begin: Alignment.centerLeft,
+    end: Alignment.centerRight,
+    colors: [gradientStart, gradientEnd],
   );
 
-  static const LinearGradient accentGradient = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [accent, Color(0xFFF5576C)],
-  );
+  static const Color glassBorder = Color(0x3300FFFF);
 
-  static const LinearGradient darkGradient = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [backgroundDark, surfaceDark],
-  );
+  static const Color grid = Color(0x0D00FFFF);
 
-  static const LinearGradient successGradient = LinearGradient(
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-    colors: [Color(0xFF11998E), Color(0xFF38EF7D)],
-  );
+  static const Color inputFocusGlow = Color(0xCC00FFFF);
+
+  static const Color decorativeCyanCorner = Color(0x4D06B6D4);
+
+  static const Color primaryText = Color(0xFFE2E8F0);
+
+  static const Color white = Color(0xFFFFFFFF);
+
+  static const Color statusGreen = Color(0xFF22C55E);
+
+  static const Color mutedPlaceholder = Color(0xFF164E63);
+
+  static const Color lowContrastText = Color(0x66FFFFFF);
+
+  static const Color ultraLowContrast = Color(0x33FFFFFF);
+
+  static const Color mutedCyan = Color(0x8022D3EE);
 }

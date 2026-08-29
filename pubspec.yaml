@@ -33,7 +33,10 @@ dependencies:
   bloc: ^9.2.1
   firebase_core: ^4.13.0
   firebase_auth: ^6.5.7
+  firebase_database: ^12.4.7
   cloud_firestore: ^6.8.0
+  get_it: ^9.2.1
+  
 
 dev_dependencies:
   flutter_test:
@@ -50,9 +53,18 @@ flutter:
     - assets/fonts/
     - assets/icons/
 
-  fonts:
-    - family: CustomFont
-      fonts:
-        - asset: assets/fonts/CustomFont-Regular.ttf
-        - asset: assets/fonts/CustomFont-Bold.ttf
-          weight: 700
+  # fonts:
+  #   - family: orb
+  #     fonts:
+  #       - asset: assets/fonts/Orbitron/static/Orbitron-Black.ttf
+  #         weight: 900
+  #       - asset: assets/fonts/Orbitron/static/Orbitron-Bold.ttf
+  #         weight: 700
+  #       - asset: assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf
+  #         weight: 800
+  #       - asset: assets/fonts/Orbitron/static/Orbitron-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Orbitron/static/Orbitron-Regular.ttf
+  #         weight: 400
+  #       - asset: assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf
+  #         weight: 600

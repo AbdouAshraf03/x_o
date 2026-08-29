@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../features/auth/presentation/screens/login_screen.dart';
+import '../../features/auth/presentation/screens/register_screen.dart';
 import 'routes.dart';
 
 /// Application Router
@@ -7,8 +9,12 @@ class AppRouter {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case Routes.home:
-        return _buildRoute(const MainPage(), settings);
+      // case Routes.home:
+      //   return _buildRoute(const MainPage(), settings);
+      case Routes.regiest:
+        return _buildRoute(const RegisterScreen(), settings);
+      case Routes.login:
+        return _buildRoute(const LoginScreen(), settings);
       default:
         return _buildRoute(
           Scaffold(

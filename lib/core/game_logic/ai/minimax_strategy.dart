@@ -1,8 +1,9 @@
 import '../board_engine.dart';
 import '../game_result.dart';
+import '../symbol_enum.dart';
 
 class MinimaxStrategy {
-  int pickMove(List<String?> board, String aiSymbol) {
+  int pickMove(List<XOSymbol?> board, XOSymbol aiSymbol) {
     final available = BoardEngine.availableMoves(board);
     if (available.isEmpty) {
       throw StateError('No available moves to pick from.');
@@ -32,18 +33,17 @@ class MinimaxStrategy {
   }
 
   int _minimax(
-    List<String?> board, {
+    List<XOSymbol?> board, {
     required int depth,
     required bool isMaximizing,
-    required String aiSymbol,
-    required String humanSymbol,
+    required XOSymbol aiSymbol,
+    required XOSymbol humanSymbol,
     required int alpha,
     required int beta,
   }) {
     final result = BoardEngine.evaluate(board);
 
     if (result.status == GameStatus.win) {
-      // Prefer faster wins / slower losses by weighting with depth.
       final winnerIsAi = result.winnerSymbol == aiSymbol;
       return winnerIsAi ? (10 - depth) : (depth - 10);
     }

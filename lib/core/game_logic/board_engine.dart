@@ -1,4 +1,5 @@
 import 'game_result.dart';
+import 'symbol_enum.dart';
 
 class BoardEngine {
   BoardEngine._();
@@ -17,25 +18,25 @@ class BoardEngine {
     [2, 4, 6],
   ];
 
-  static bool isValidMove(List<String?> board, int index) =>
+  static bool isValidMove(List<XOSymbol?> board, int index) =>
       (index < 0 || index >= board.length) ? false : board[index] == null;
 
-  static List<int> availableMoves(List<String?> board) => [
+  static List<int> availableMoves(List<XOSymbol?> board) => [
     for (int i = 0; i < board.length; i++)
       if (board[i] == null) i,
   ];
 
-  static List<String?> applyMove(
-    List<String?> board,
+  static List<XOSymbol?> applyMove(
+    List<XOSymbol?> board,
     int index,
-    String symbol,
+    XOSymbol symbol,
   ) {
-    final next = List<String?>.from(board);
+    final next = List<XOSymbol?>.from(board);
     next[index] = symbol;
     return next;
   }
 
-  static GameResult evaluate(List<String?> board) {
+  static GameResult evaluate(List<XOSymbol?> board) {
     for (final line in _winningLines) {
       final a = board[line[0]];
       final b = board[line[1]];
@@ -52,7 +53,7 @@ class BoardEngine {
     return const GameResult.ongoing();
   }
 
-  static String opponentOf(String symbol) => symbol == 'X' ? 'O' : 'X';
+  static XOSymbol opponentOf(XOSymbol symbol) => symbol == .X ? .O : .X;
 
-  static List<String?> emptyBoard() => List<String?>.filled(9, null);
+  static List<XOSymbol?> emptyBoard() => List<XOSymbol?>.filled(9, null);
 }
