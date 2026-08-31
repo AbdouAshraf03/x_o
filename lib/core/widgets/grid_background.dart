@@ -20,12 +20,12 @@ class GridBackground extends StatefulWidget {
 
 class _GridBackgroundState extends State<GridBackground>
     with SingleTickerProviderStateMixin {
-  late final AnimationController _controller;
+  late final AnimationController _ctl;
   @override
   void initState() {
     super.initState();
     if (widget.enableScanAnimation) {
-      _controller = AnimationController(
+      _ctl = AnimationController(
         vsync: this,
         duration: const Duration(seconds: 3),
       )..repeat();
@@ -34,7 +34,7 @@ class _GridBackgroundState extends State<GridBackground>
 
   @override
   void dispose() {
-    _controller.dispose();
+    _ctl.dispose();
     super.dispose();
   }
 
@@ -47,10 +47,10 @@ class _GridBackgroundState extends State<GridBackground>
         children: [
           Positioned.fill(
             child: AnimatedBuilder(
-              animation: _controller,
+              animation: _ctl,
               builder: (context, child) {
                 return CustomPaint(
-                  painter: GridPainter(scanPosition: _controller.value),
+                  painter: GridPainter(scanPosition: _ctl.value),
                   child: child,
                 );
               },

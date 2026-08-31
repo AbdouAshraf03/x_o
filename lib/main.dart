@@ -21,7 +21,7 @@ class MyGame extends StatelessWidget {
     return MaterialApp(
       initialRoute: Routes.login,
       onGenerateRoute: AppRouter.generateRoute,
-      theme: AppTheme.lightTheme,
+      theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
     );
   }

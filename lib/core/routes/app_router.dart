@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import '../../features/auth/presentation/screens/login_screen.dart';
-import '../../features/auth/presentation/screens/register_screen.dart';
+import '../../features/auth/presentation/screens/auth_screen.dart';
+
 import 'routes.dart';
 
-/// Application Router
 class AppRouter {
   AppRouter._();
 
@@ -12,9 +11,9 @@ class AppRouter {
       // case Routes.home:
       //   return _buildRoute(const MainPage(), settings);
       case Routes.regiest:
-        return _buildRoute(const RegisterScreen(), settings);
+        return _buildRoute(const AuthScreen(), settings);
       case Routes.login:
-        return _buildRoute(const LoginScreen(), settings);
+        return _buildRoute(const AuthScreen(), settings);
       default:
         return _buildRoute(
           Scaffold(
@@ -45,36 +44,36 @@ class AppRouter {
     );
   }
 
-  static void navigateTo(
-    BuildContext context,
-    String routeName, {
-    Object? arguments,
-  }) {
-    Navigator.pushNamed(context, routeName, arguments: arguments);
-  }
+  // static void navigateTo(
+  //   BuildContext context,
+  //   String routeName, {
+  //   Object? arguments,
+  // }) {
+  //   Navigator.pushNamed(context, routeName, arguments: arguments);
+  // }
 
-  static void navigateAndReplace(
-    BuildContext context,
-    String routeName, {
-    Object? arguments,
-  }) {
-    Navigator.pushReplacementNamed(context, routeName, arguments: arguments);
-  }
+  // static void navigateAndReplace(
+  //   BuildContext context,
+  //   String routeName, {
+  //   Object? arguments,
+  // }) {
+  //   Navigator.pushReplacementNamed(context, routeName, arguments: arguments);
+  // }
 
-  static void navigateAndRemoveUntil(
-    BuildContext context,
-    String routeName, {
-    Object? arguments,
-  }) {
-    Navigator.pushNamedAndRemoveUntil(
-      context,
-      routeName,
-      (route) => false,
-      arguments: arguments,
-    );
-  }
+  // static void navigateAndRemoveUntil(
+  //   BuildContext context,
+  //   String routeName, {
+  //   Object? arguments,
+  // }) {
+  //   Navigator.pushNamedAndRemoveUntil(
+  //     context,
+  //     routeName,
+  //     (route) => false,
+  //     arguments: arguments,
+  //   );
+  // }
 
-  static void goBack(BuildContext context) {
-    Navigator.pop(context);
-  }
+  // static void goBack(BuildContext context) {
+  //   Navigator.pop(context);
+  // }
 }
