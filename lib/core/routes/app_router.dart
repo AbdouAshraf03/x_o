@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../features/auth/presentation/screens/auth_screen.dart';
 
+import '../../features/home/presentation/screens/home_screen.dart';
 import 'routes.dart';
 
 class AppRouter {
@@ -8,8 +9,8 @@ class AppRouter {
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      // case Routes.home:
-      //   return _buildRoute(const MainPage(), settings);
+      case Routes.home:
+        return _buildRoute(const HomeScreen(), settings);
       case Routes.regiest:
         return _buildRoute(const AuthScreen(), settings);
       case Routes.login:
