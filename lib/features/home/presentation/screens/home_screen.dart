@@ -3,8 +3,8 @@ import 'package:x_o/core/routes/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/typography.dart';
 import '../../../../core/widgets/grid_background.dart';
-import 'widgets/stat_card.dart';
-import 'widgets/room_card.dart';
+import '../widgets/stat_card.dart';
+import '../widgets/room_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -209,20 +209,23 @@ class _Header extends StatelessWidget {
           ],
         ),
         const SizedBox(width: 10),
-        Container(
-          width: 36,
-          height: 36,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(color: AppColors.coreCyan, width: 1.5),
-          ),
-          child: ClipOval(
-            child: Container(
-              color: AppColors.inputBackground,
-              child: const Icon(
-                Icons.person,
-                color: AppColors.mutedCyan,
-                size: 20,
+        InkWell(
+          onTap: () => Navigator.of(context).pushNamed(Routes.profileScreen),
+          child: Container(
+            width: 36,
+            height: 36,
+            decoration: BoxDecoration(
+              shape: .circle,
+              border: .all(color: AppColors.coreCyan, width: 1.5),
+            ),
+            child: ClipOval(
+              child: Container(
+                color: AppColors.inputBackground,
+                child: const Icon(
+                  Icons.person,
+                  color: AppColors.mutedCyan,
+                  size: 20,
+                ),
               ),
             ),
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:x_o/features/profile/presentation/screens/profile_screen.dart';
 import 'package:x_o/features/room/presentation/screens/room_screen.dart';
 import '../../features/auth/presentation/screens/auth_screen.dart';
 
@@ -22,6 +23,21 @@ class AppRouter {
             roomCode: 'DWWF23S',
             roomName: 'MYROOM',
             hostName: 'abdou',
+          ),
+          settings,
+        );
+      case Routes.profileScreen:
+        return _buildRoute(
+          //TODO: remove dummy data
+          const ProfileScreen(
+            registryId: "V_213",
+            callsign: 'TESTONE',
+            roleLabel: 'ADMIN',
+            level: 40,
+            winRatePercent: (123 / (123 + 23)) * 100,
+            victories: 123,
+            defeats: 23,
+            stalemates: 2,
           ),
           settings,
         );

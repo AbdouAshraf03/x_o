@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../../../core/theme/colors.dart';
-import '../../../../../core/theme/typography.dart';
-import '../../../../../core/widgets/glass_panel.dart';
+import '../../../../core/theme/colors.dart';
+import '../../../../core/theme/typography.dart';
+import '../../../../core/widgets/glass_panel.dart';
 
 class StatCard extends StatelessWidget {
   final String label;

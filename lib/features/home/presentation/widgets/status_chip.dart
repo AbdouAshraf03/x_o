@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:x_o/core/utils/extensions.dart';
 
-import '../../../../../core/theme/colors.dart';
-import '../../../../../core/theme/typography.dart';
+import '../../../../core/theme/colors.dart';
+import '../../../../core/theme/typography.dart';
 
 class StatusChip extends StatelessWidget {
   final String label;
