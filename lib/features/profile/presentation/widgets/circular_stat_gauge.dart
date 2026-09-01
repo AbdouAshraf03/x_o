@@ -54,7 +54,7 @@ class _CircularStatGaugeState extends State<CircularStatGauge>
       CurvedAnimation(parent: _rotationController, curve: Curves.linear),
     );
 
-    _rotationController.repeat(reverse: true);
+    _rotationController.repeat(/*reverse: true*/);
 
     _progCtrl.forward();
   }
@@ -204,19 +204,13 @@ class _GaugePainter extends CustomPainter {
     final secRect = Rect.fromCircle(center: center, radius: outerRadius);
 
     canvas.drawArc(rect, -math.pi, -math.pi * 2, false, trackPaint);
-    canvas.drawArc(
-      rect,
-      math.pi + progress / 2,
-      math.pi + progress / 10,
-      false,
-      primaryPaint,
-    );
+    canvas.drawArc(rect, math.pi + progress, math.pi, false, primaryPaint);
 
     canvas.drawArc(secRect, -math.pi, -math.pi * 2, false, trackPaint);
     canvas.drawArc(
       secRect,
-      math.pi - progress / 2,
-      math.pi - progress / 10,
+      math.pi - progress,
+      math.pi,
       false,
       secPrimaryPaint,
     );

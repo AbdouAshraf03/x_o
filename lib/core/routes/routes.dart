@@ -7,6 +7,7 @@ class Routes {
   static const String regiest = '/regiest';
   static const String waitingRoom = "/roomScreen";
   static const String profileScreen = "/profileScreen";
+  static const String gameScreen = "/gameScreen";
 
   static const String settings = '/settings';
 }

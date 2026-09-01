@@ -67,6 +67,7 @@ class HomeScreen extends StatelessWidget {
                 occupied: 1,
                 capacity: 2,
                 onTap: () {
+                  Navigator.of(context).pushNamed(Routes.gameScreen);
                   // TODO: navigate to RoomScreen.
                 },
               ),
