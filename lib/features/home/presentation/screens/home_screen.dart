@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:x_o/core/routes/routes.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/typography.dart';
 import '../../../../core/widgets/grid_background.dart';
@@ -7,6 +8,11 @@ import 'widgets/room_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
+
+  void _handleCreateNewRoom(BuildContext context) {
+    //TODO: _handleCreateNewRoom
+    Navigator.of(context).pushNamed(Routes.waitingRoom);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +114,7 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.transparent,
                       borderRadius: BorderRadius.circular(12),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () => _handleCreateNewRoom(context),
                         borderRadius: BorderRadius.circular(12),
                         child: Padding(
                           padding: const EdgeInsets.all(28),

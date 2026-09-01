@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:x_o/features/room/presentation/screens/room_screen.dart';
 import '../../features/auth/presentation/screens/auth_screen.dart';
 
 import '../../features/home/presentation/screens/home_screen.dart';
@@ -15,6 +16,15 @@ class AppRouter {
         return _buildRoute(const AuthScreen(), settings);
       case Routes.login:
         return _buildRoute(const AuthScreen(), settings);
+      case Routes.waitingRoom:
+        return _buildRoute(
+          const RoomScreen(
+            roomCode: 'DWWF23S',
+            roomName: 'MYROOM',
+            hostName: 'abdou',
+          ),
+          settings,
+        );
       default:
         return _buildRoute(
           Scaffold(

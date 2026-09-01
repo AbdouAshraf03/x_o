@@ -28,11 +28,11 @@ class CustomGradientButton extends StatelessWidget {
           gradient: AppColors.actionGradient,
           borderRadius: BorderRadius.circular(14),
           boxShadow: [
-            BoxShadow(
+            const BoxShadow(
               color: AppColors.buttonShadow,
               blurRadius: 24,
               spreadRadius: 1,
-              offset: const Offset(0, 6),
+              offset: Offset(0, 6),
             ),
           ],
         ),

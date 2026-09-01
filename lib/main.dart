@@ -19,7 +19,7 @@ class MyGame extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Routes.login,
+      initialRoute: Routes.home,
       onGenerateRoute: AppRouter.generateRoute,
       theme: AppTheme.darkTheme,
       darkTheme: AppTheme.darkTheme,
