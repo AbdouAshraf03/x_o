@@ -20,8 +20,6 @@ class SciFiBoard extends StatelessWidget {
     this.previewSymbol,
   });
 
-  // static const Color _oColor = Color(0xFFD946EF);
-
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
