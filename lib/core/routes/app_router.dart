@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:x_o/features/game/presentation/screens/game_screen.dart';
 import 'package:x_o/features/profile/presentation/screens/profile_screen.dart';
 import 'package:x_o/features/room/presentation/screens/room_screen.dart';
 import '../../features/auth/presentation/screens/auth_screen.dart';
 
+import '../../features/game/presentation/bloc/game_bloc.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import 'routes.dart';
 
@@ -45,17 +47,20 @@ class AppRouter {
       case Routes.gameScreen:
         return _buildRoute(
           //TODO: remove dummy data
-          GameScreen(
-            playerXName: "abdou",
-            playerOName: "ali",
-            scoreX: 0,
-            scoreO: 0,
-            isMyTurn: true,
-            currentTurnSymbol: "X",
-            turnStartedAt: DateTime.now(),
-            board: List.filled(9, null),
-            mySymbol: "X",
-            onCellTap: (index) {},
+          BlocProvider<GameBloc>(
+            create: (context) => GameBloc(),
+            child: GameScreen(
+              playerXName: "abdou",
+              playerOName: "ali",
+              scoreX: 0,
+              scoreO: 0,
+              isMyTurn: true,
+              currentTurnSymbol: "X",
+              turnStartedAt: DateTime.now(),
+              board: List.filled(9, null),
+              mySymbol: "X",
+              onCellTap: (index) {},
+            ),
           ),
           settings,
         );

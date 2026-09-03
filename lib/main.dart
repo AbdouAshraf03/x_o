@@ -5,19 +5,13 @@ import 'package:x_o/core/theme/app_theme.dart';
 
 import 'core/routes/app_router.dart';
 import 'core/routes/routes.dart';
-import 'features/game/presentation/bloc/game_bloc.dart';
 import 'injection_container.dart';
 
 void main() async {
   // await Firebase.initializeApp();
 
   await init();
-  runApp(
-    MultiBlocProvider(
-      providers: [BlocProvider(create: (context) => GameBloc())],
-      child: const MyGame(),
-    ),
-  );
+  runApp(MultiBlocProvider(providers: [], child: const MyGame()));
 }
 
 class MyGame extends StatelessWidget {
